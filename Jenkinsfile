@@ -8,7 +8,7 @@ pipeline {
         AWS_EB_APP_NAME = "amjad-jenkins"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Amjadjenkins-env"
-    }
+    
 
 
     stages {
@@ -60,7 +60,7 @@ pipeline {
                 success{
                     archiveArtifacts artifacts: '**/target/**.jar', followSymlinks: false
                 }
-            }
+            
         }
     
         stage('publish artfacts to s3') {
@@ -79,5 +79,5 @@ pipeline {
             }
         }
 
-    }
+    
 }
