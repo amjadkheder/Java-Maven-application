@@ -16,8 +16,10 @@ pipeline {
         stage('quality scan'){
             steps{
                 sh '''
-            sudo docker run -d --name sonarqube -p 80:9000 -v sonarqube_data:/opt/sonarqube/data -v sonarqube_extensions:/opt/sonarqube/extensions -v sonarqube_logs:/opt/sonarqube/logs sonarqube
-
+            mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=online-Amjad-B2D2 \
+  -Dsonar.host.url=http://52.23.193.18 \
+  -Dsonar.login=sqp_18e8efb1dcbf32a0af39bc6d079337796e593148
                 '''
             }
         }
