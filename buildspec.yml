@@ -24,7 +24,7 @@ phases:
     commands:
     - echo build start on 'date'
     - mvn package
-    - mv target/*.jar ROOT.jar
+    - mv target/*. ROOT.jar
     - echo buil end on 'date'
 
 artifacts:
